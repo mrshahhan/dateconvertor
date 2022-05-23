@@ -1,0 +1,28 @@
+import java.time.*;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        convertDate();
+    }
+
+
+        public static void convertDate(){
+
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Введите дату: ");
+            int d = scanner.nextInt();
+            long f = d;
+
+            Date date = new Date(f);
+            System.out.println(date);
+
+            Instant instant = date.toInstant();
+
+            ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("Asia/Almaty"));
+            System.out.println(zonedDateTime);
+        }
+
+}
